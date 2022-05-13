@@ -21,4 +21,4 @@ int main() {
     printf("%c", max);
 
     return 0;
-}
+} 
