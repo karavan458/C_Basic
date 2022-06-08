@@ -1,7 +1,6 @@
 #include <stdio.h>
  
-int main()
-{
+int main() {
     int arr[100][100];
     int size, save_size;
     int x = 0, y = -1, turn = 1;
