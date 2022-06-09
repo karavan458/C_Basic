@@ -14,4 +14,4 @@ int main() {
     printf("이름 : %s \n", name);
 
     return 0;
-}
+} 
