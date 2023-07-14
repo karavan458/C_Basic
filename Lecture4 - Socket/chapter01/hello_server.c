@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
+    //소켓 생성
     serv_sock = socket(PF_INET, SOCK_STREAM, 0);
     if(serv_sock == -1) {
         error_handling("socket() error");
@@ -37,10 +38,13 @@ int main(int argc, char *argv[]) {
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     serv_addr.sin_port = htons(atoi(argv[1]));
 
+    //바인드 함수를 사용할 때에는 소켓의 정보를 함께 전달한다.
     if(bind(serv_sock, (struct sockaddr*) &serv_addr, sizeof(serv_addr)) == -1) {
         error_handling("bind() error");
     }
 
+
+    //소켓을 연결하는 함수 리슨 함수 호출 이때에도 소켓의 정보를 함께 보냄
     if(listen(serv_sock, 5) == -1) {
         error_handling("listen() error");
     }
